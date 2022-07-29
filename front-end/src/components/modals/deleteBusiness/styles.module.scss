@@ -1,0 +1,19 @@
+.list {
+    dt {
+        font-weight: bold;
+
+        //not select first child
+        &:not(:first-child) {
+            padding-top: 1rem;
+        }
+    }
+    dd {
+        color: #a1a1a1;
+        padding-top: 0.3rem;
+
+        // select last 3 children
+        &:nth-last-child(-n + 3) {
+            padding-top: 0.1rem;
+        }
+    }
+}
