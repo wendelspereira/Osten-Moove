@@ -121,13 +121,13 @@ const Home: NextPage<IPageHomeProps> = (props: IPageHomeProps) => {
       <main className="flex flex-col justify-center items-center p-[5rem] gap-7">
         <div className="flex w-full justify-between items-center h-[5rem]">
           <div className=" flex flex-col h-full gap-3">
-            <span className="text-gray-600 text-2xl">Business</span>
+            <span className="text-gray-600 text-2xl">Empresas</span>
             <div className="flex items-center px-3 bg-white h-10 w-[20rem] rounded-full gap-3 shadow-md">
               <MagnifyingGlass size={20} color="#607b96" weight="light" />
               <input
                 name="searchByTradeName"
                 type="text"
-                placeholder="Search by trade name"
+                placeholder="Buscar"
                 className="w-[16rem] border-none bg-white text-gray-300 h-full"
                 onKeyDown={handleSearch}
               />
@@ -138,7 +138,7 @@ const Home: NextPage<IPageHomeProps> = (props: IPageHomeProps) => {
               onClick={handleCreateBusiness}
               className="bg-blue-900 font-bold text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
             >
-              Create Business
+              Adicionar Nova Empresa
             </button>
           </div>
         </div>
@@ -159,17 +159,17 @@ const Home: NextPage<IPageHomeProps> = (props: IPageHomeProps) => {
               return (
                 <tr
                   key={id}
-                  className="w-full h-10 border-b-[1px] flex items-center justify-start px-[10%] hover:bg-gray-100 transition-colors
+                  className="w-full h-10 border-b-[1px] flex items-center justify-between px-[10%] hover:bg-gray-100 transition-colors
                     "
                 >
-                  <td className="w-full h-10 flex items-center justify-start text-gray-600 ">
+                  <td className="w-full h-full flex items-center justify-start text-gray-600 ">
                     <div className="w-[30%] lg:w-[20%] font-medium text-blue-900">
                       {formatId(id)}
                     </div>
-                    <div className="w-[40%]  truncate">{tradeName}</div>
-                    <div className="w-[30%] pr-5 ">{cnpj}</div>
+                    <div className="w-[40%] truncate">{tradeName}</div>
+                    <div className="w-[30%] pr-5">{cnpj}</div>
                   </td>
-                  <td className=" hidden  absolute right-28  md:flex gap-8 ">
+                  <td className="hidden absolute right-28  md:flex gap-8 ">
                     <Eye
                       size={20}
                       color="#64748B"

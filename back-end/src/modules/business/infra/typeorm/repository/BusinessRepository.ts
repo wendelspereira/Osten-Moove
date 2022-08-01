@@ -13,11 +13,10 @@ export class BusinessRepository implements IBusinessRepository {
 
   async create(data: ICreateBusinessDTO): Promise<void> {
     try {
-      
       const business = this.repository.create(Business, data);
       await this.repository.save(business);
     } catch (err) {
-      throw new AppError(`Error while saving data: ${err}`, 500);
+      throw new AppError(`${err}`, 500);
     }
   }
 
@@ -26,7 +25,7 @@ export class BusinessRepository implements IBusinessRepository {
       const allBusiness = await this.repository.find(Business);
       return allBusiness;
     } catch (err) {
-      throw new AppError(`Error while getting data: ${err}`, 500);
+      throw new AppError(`${err}`, 500);
     }
   }
 
@@ -40,7 +39,7 @@ export class BusinessRepository implements IBusinessRepository {
       });
       return business;
     } catch (err) {
-      throw new AppError(`Error while find data: ${err}`, 500);
+      throw new AppError(`${err}`, 500);
     }
   }
 
@@ -55,13 +54,13 @@ export class BusinessRepository implements IBusinessRepository {
 
       return business;
     } catch (err) {
-      throw new AppError(`Error while find data: ${err}`, 500);
+      throw new AppError(`${err}`, 500);
     }
   }
 
   async cnpjAlreadyRegistered(cnpj: string): Promise<boolean> {
     if (!cnpj) {
-      throw new AppError(`Unable to find data for given CNPJ: ${cnpj}`);
+      throw new AppError(`${cnpj}`);
     }
 
     try {
@@ -72,7 +71,7 @@ export class BusinessRepository implements IBusinessRepository {
 
       return Boolean(business);
     } catch (err) {
-      throw new AppError(`Error while find data: ${err}`, 500);
+      throw new AppError(`${err}`, 500);
     }
   }
 
@@ -85,13 +84,13 @@ export class BusinessRepository implements IBusinessRepository {
 
     const business = await this.findById(id);
     if (!business) {
-      throw new AppError(`Data not found for given id: ${id}`);
+      throw new AppError(`${id}`);
     }
 
     try {
       await this.repository.update(Business, id, data);
     } catch (err) {
-      throw new AppError(`Error while updating: ${err}`, 500);
+      throw new AppError(`${err}`, 500);
     }
   }
 
@@ -106,7 +105,7 @@ export class BusinessRepository implements IBusinessRepository {
     try {
       await this.repository.delete(Business, id);
     } catch (err) {
-      throw new AppError(`error while deleting: ${err}`, 500);
+      throw new AppError(`${err}`, 500);
     }
   }
 }

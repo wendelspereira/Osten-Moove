@@ -1,7 +1,7 @@
 import { AppError } from "../../../../shared/error/AppError";
 import { validateCNPJ } from "../../../../utils/cnpjValidate.js";
 import { IUpdateBusinessDTO } from "../../dtos/IBusinessDTOs";
-import { BusinessRepository } from "../../infra/sqlite/repository/BusinessRepository";
+import { BusinessRepository } from "../../infra/typeorm/repository/BusinessRepository";
 
 export class UpdateBusinessUseCase {
   async execute(data: IUpdateBusinessDTO, id: string) {

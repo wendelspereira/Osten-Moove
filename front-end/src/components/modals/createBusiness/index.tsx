@@ -41,7 +41,7 @@ export function CreateBusiness(props: ICreateBusinessProps) {
       <div className="w-full border-b-[2px] border-gray-100 ">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-600 ">
-            Dados da empresa
+            Nova Empresa
           </h1>
         </div>
       </div>
@@ -111,13 +111,13 @@ export function CreateBusiness(props: ICreateBusinessProps) {
         <div className="flex justify-end gap-4 mt-2">
           <button
             onClick={() => props.closeModal()}
-            className="bg-gray-300 w-[6rem] font-bold text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
+            className="bg-gray-500 w-[6rem] text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="bg-blue-900 w-[6rem] font-bold text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
+            className="bg-blue-900 w-[6rem] text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
           >
             Savar
           </button>

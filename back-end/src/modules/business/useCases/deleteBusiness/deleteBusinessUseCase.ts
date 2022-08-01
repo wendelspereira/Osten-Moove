@@ -1,5 +1,5 @@
 import { AppError } from "../../../../shared/error/AppError";
-import { BusinessRepository } from "../../infra/sqlite/repository/BusinessRepository";
+import { BusinessRepository } from "../../infra/typeorm/repository/BusinessRepository";
 
 export class DeleteBusinessUseCase {
   async execute(id: string): Promise<void> {

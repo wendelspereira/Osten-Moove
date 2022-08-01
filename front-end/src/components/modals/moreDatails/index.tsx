@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { useFetch } from "../../../services/useFetch";
 import { Business } from "../../../entities/Business";
 import { formatId } from "../../../utils/formatId";
+import { CircularProgress } from "@mui/material";
 
 interface ShowbusinessProps {
   id: number;
@@ -14,15 +15,19 @@ export function MoreDetail(props: ShowbusinessProps) {
   const { data, isFetching } = useFetch<Business>(`/?id=${props.id}`);
 
   if (isFetching) {
-    return <>Carregando...</>;
-  }
+    return (
+      <div className="flex items-center justify-center w-[22rem] h-[10rem]">
+        <CircularProgress/>
+      </div>
+    ) 
+  } 
 
   return (
     <div className="w-[44rem] ">
       <div className="w-full border-b-[2px] border-gray-100 py-8 px-8 ">
         <div className="flex justify-between items-center right-3 top-3  ">
           <h1 className="text-2xl font-bold text-gray-600 ">
-            Dados da empresa
+            Informações sobre a empresa
           </h1>
           <X
             size={20}
@@ -33,7 +38,7 @@ export function MoreDetail(props: ShowbusinessProps) {
           />
         </div>
       </div>
-      <div className="px-14 py-8">
+      <div className="px-14 py-6">
         <dl className={styles.list}>
           <dt>ID</dt>
           <dd>{formatId(data?.id)}</dd>
@@ -45,8 +50,7 @@ export function MoreDetail(props: ShowbusinessProps) {
           <dd>{data?.cnpj}</dd>
           <dt>TELEFONE</dt>
           <dd>
-            ({data?.prefixPhoneNumber}) {" "}
-            {data?.phoneNumber}
+            ({data?.prefixPhoneNumber}) {data?.phoneNumber}
           </dd>
           <dt>ENDEREÇO</dt>
           <dd>

@@ -1,5 +1,5 @@
 {
-  "name": "Test Oston Moove - Back-end",
+  "name": "Oston Moove - Back-end",
   "version": "1.0.0",
   "description": "Api of business registration",
   "main": "src/shared/infra/http/server.ts",
@@ -24,14 +24,15 @@
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
     "heroku": "^7.60.2",
+    "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
-    "sqlite3": "^5.0.10",
     "tsconfig-paths": "^4.0.0",
     "typeorm": "^0.3.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
+    "sqlite3": "^5.0.10",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
   }

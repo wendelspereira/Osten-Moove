@@ -6,7 +6,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -20,6 +20,9 @@ a {
 }
 
 input:focus {
+  outline: none;
+}
+button:focus {
   outline: none;
 }
 

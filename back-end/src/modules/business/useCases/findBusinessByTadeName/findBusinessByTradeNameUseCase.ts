@@ -1,6 +1,6 @@
 import { AppError } from "../../../../shared/error/AppError";
-import { Business } from "../../infra/sqlite/entity/Business";
-import { BusinessRepository } from "../../infra/sqlite/repository/BusinessRepository";
+import { Business } from "../../infra/typeorm/entity/Business";
+import { BusinessRepository } from "../../infra/typeorm/repository/BusinessRepository";
 
 export class FindBusinessByTradeNameUseCase {
   async execute(tradeName: string): Promise<Business[] | []> {

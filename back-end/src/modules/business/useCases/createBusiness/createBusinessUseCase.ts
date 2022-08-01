@@ -1,7 +1,7 @@
 import { ICreateBusinessDTO } from "../../dtos/IBusinessDTOs";
 import { AppError } from "../../../../shared/error/AppError";
 import { validateCNPJ } from "../../../../utils/cnpjValidate.js";
-import { BusinessRepository } from "../../infra/sqlite/repository/BusinessRepository";
+import { BusinessRepository } from "../../infra/typeorm/repository/BusinessRepository";
 
 export class CreateBusinessUseCase {
   async execute(data: ICreateBusinessDTO) {

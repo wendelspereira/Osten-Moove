@@ -13,4 +13,4 @@ app.use(express.json());
 app.use(routes);
 app.use(error);
 
-app.listen(process.env.PORT, () => console.log("Server is running!"));
+app.listen(process.env.PORT || 3333, () => console.log("Server is running!"));

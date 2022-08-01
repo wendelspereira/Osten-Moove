@@ -5,6 +5,8 @@ import styles from "./styles.module.scss";
 import { Business } from "../../../entities/Business";
 import { api } from "../../../config/axios";
 import { useFetch } from "../../../services/useFetch";
+import { CircularProgress } from "@mui/material";
+
 
 interface IUpdateBusinessProps {
   id: number;
@@ -14,13 +16,14 @@ interface IUpdateBusinessProps {
 export function UpdateBusiness(props: IUpdateBusinessProps) {
   const { data, error, isFetching } = useFetch<Business>(`/?id=${props.id}`);
 
+
   if (isFetching) {
     return (
-      <>
-        <p>Carregando...</p>
-      </>
-    );
-  }
+      <div className="flex items-center justify-center w-[22rem] h-[10rem]">
+        <CircularProgress/>
+      </div>
+    ) 
+  } 
 
   async function handleSubmit(data: Business) {
     try {
@@ -50,15 +53,14 @@ export function UpdateBusiness(props: IUpdateBusinessProps) {
       <div className="w-full border-b-[2px] border-gray-100 ">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-600 ">
-            Dados da empresa
+            Editar informações
           </h1>
         </div>
       </div>
       <Form
         onSubmit={handleSubmit}
-        className="flex flex-col w-full h-full gap-2"
+        className="flex flex-col w-full h-full gap-2 mt-5"
       >
-        <label className="text-lg font-bold text-gray-600 mt-5 ">Dados</label>
 
         <Input
           defaultValue={data!.corporateName}
@@ -149,13 +151,13 @@ export function UpdateBusiness(props: IUpdateBusinessProps) {
         <div className="flex justify-end gap-4 mt-2">
           <button
             onClick={() => props.closeModal()}
-            className="bg-gray-300 w-[6rem] font-bold text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
+            className="bg-gray-500 w-[6rem] text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="bg-blue-900 w-[6rem] font-bold text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
+            className="bg-blue-900 w-[6rem] text-white py-2 px-4 rounded-md hover:opacity-80 shadow-md"
           >
             Savar
           </button>

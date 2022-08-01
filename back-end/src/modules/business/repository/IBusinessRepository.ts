@@ -1,4 +1,4 @@
-import { Business } from "../infra/sqlite/entity/Business";
+import { Business } from "../infra/typeorm/entity/Business";
 
 export interface IBusinessRepository {
     create: (data: Business) => Promise<void>;
